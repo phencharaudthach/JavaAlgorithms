@@ -1,0 +1,20 @@
+package com.codewithphencharaud;
+
+public class Main {
+
+    public static int main(String[] args, int[] keyboards, int[] drives, int b) {
+        int max = 0;
+        for ( int i = keyboards.length -1; i >= 0; i--){
+            int sum = 0;
+            for (int j = drives.length-1; j >= 0; j--){
+                sum = keyboards[i]+drives[j];
+                if(sum > max && sum <= b)
+                    max = sum;
+            }
+        }
+        if (max ==0)
+           return -1;
+        else
+            return max;
+    }
+}
